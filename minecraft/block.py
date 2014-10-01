@@ -4,7 +4,8 @@ from enum import IntEnum
 class Block:
     """
     Minecraft PI block description. Can be sent to Minecraft.setBlock/s
-    block.type = the blockID of a block (It's material)
+    block.type = the blockID of a block (Its material)
+    For example grass, sand, dirt or wool
     block.data = The variant of the type of block.
     For example the colour of wool or the orientation of stairs
     The default type for blocks is dirt
@@ -17,9 +18,9 @@ class Block:
     def __eq__(self, rhs):
         """
             Equality override
-            Two blocks are equal only if their hashes are equal
+            Two blocks are equal only if both the type and data attributes are equal
             """
-        return hash(self) == hash(rhs)
+        return all([self.type == rhs.type, self.data == rhs.data])
 
     def __ne__(self, rhs):
         """
@@ -30,7 +31,7 @@ class Block:
     def __hash__(self):
         """
             Override of hash generation
-            Returns a unique representation of contents of block
+            Returns a hashed representation of contents of block
             """
         return (self.type << 8) + self.data
 
