@@ -63,7 +63,7 @@ class Block:
         return self.type
 
 
-class blockType(IntEnum):
+class BlockType(IntEnum):
     AIR = 0
     STONE = 1
     GRASS = 2
