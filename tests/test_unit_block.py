@@ -5,14 +5,14 @@ from minecraft.block import blockType
 
 class TestBlock(unittest.TestCase):
 
-    def testRepresentation(self):
+    def test_representation(self):
         # Test repr
         b = Block(2, 8)
         expectedString = "Block({:d}, {:d})".format(b.type, b.data)
         rep = repr(b)
         self.assertEqual(rep, expectedString)
 
-    def testInstantiationAndWithDataFunction(self):
+    def test_instantiation_and_with_data_function(self):
         blck = Block(12)
         self.assertEqual(blck.type, 12)
         self.assertEqual(blck.data, 0)
@@ -23,11 +23,11 @@ class TestBlock(unittest.TestCase):
         self.assertEqual(otherBlckWithData.type, 12)
         self.assertEqual(otherBlckWithData.data, 8)
 
-    def testBackwardsCompatibility(self):
+    def test_backwards_compatibility(self):
         blck = Block(12)
         self.assertEqual(blck.type, blck.id)
 
-    def testComparison(self):
+    def test_equality(self):
         b1 = Block(8, 3)
         bSame = Block(8, 3)
         bDiffId = Block(12, 3)
@@ -40,13 +40,17 @@ class TestBlock(unittest.TestCase):
         self.assertTrue(b1 != bDiffData)
         self.assertTrue(b1 != bDiffIdAndData)
 
-    def testIteration(self):
+    def test_iteration(self):
         idAndData = [35, 4]
         b = Block(idAndData[0], idAndData[1])
         for index, attr in enumerate(b):
             self.assertEqual(attr, idAndData[index])
 
-    def testBlockConstants(self):
+    def test_block_constants_aliases
+        self.assertEqual(blockType.WATER,  blockType.WATER_FLOWING)
+        self.assertEqual(blockType.LAVA,  blockType.LAVA_FLOWING)
+
+    def test_block_constants(self):
         self.assertEqual(blockType.AIR,  0)
         self.assertEqual(blockType.STONE,  1)
         self.assertEqual(blockType.GRASS,  2)
@@ -56,10 +60,8 @@ class TestBlock(unittest.TestCase):
         self.assertEqual(blockType.SAPLING,  6)
         self.assertEqual(blockType.BEDROCK,  7)
         self.assertEqual(blockType.WATER_FLOWING,  8)
-        self.assertEqual(blockType.WATER,  blockType.WATER_FLOWING)
         self.assertEqual(blockType.WATER_STATIONARY, 9)
         self.assertEqual(blockType.LAVA_FLOWING,  10)
-        self.assertEqual(blockType.LAVA,  blockType.LAVA_FLOWING)
         self.assertEqual(blockType.LAVA_STATIONARY, 11)
         self.assertEqual(blockType.SAND,  12)
         self.assertEqual(blockType.GRAVEL,  13)
