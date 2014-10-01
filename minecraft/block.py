@@ -1,8 +1,6 @@
 from enum import IntEnum
-from functools import total_ordering
 
 
-@total_ordering
 class Block:
     """
         Minecraft PI block description. Can be sent to Minecraft.setBlock/s
@@ -23,12 +21,11 @@ class Block:
             """
         return hash(self) == hash(rhs)
 
-    def __lt__(self, rhs):
+    def __ne__(self, rhs):
         """
-            Less than override
-            One block is less than another if hash is less
-            """
-        return hash(self) < hash(rhs)
+            not equal override
+        """
+        return not (self == rhs)
 
     def __hash__(self):
         """
