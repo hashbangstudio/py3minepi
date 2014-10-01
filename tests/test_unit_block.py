@@ -40,10 +40,6 @@ class TestBlock(unittest.TestCase):
         self.assertTrue(b1 != bDiffData)
         self.assertTrue(b1 != bDiffIdAndData)
 
-        self.assertTrue(bDiffId > b1)
-        self.assertTrue(bDiffData > b1)
-        self.assertTrue(bDiffIdAndData > b1)
-
     def testIteration(self):
         idAndData = [35, 4]
         b = Block(idAndData[0], idAndData[1])
