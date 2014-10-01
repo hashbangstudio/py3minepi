@@ -123,8 +123,3 @@ class TestBlock(unittest.TestCase):
         self.assertEqual(blockType.FENCE_GATE,  107)
         self.assertEqual(blockType.GLOWING_OBSIDIAN, 246)
         self.assertEqual(blockType.NETHER_REACTOR_CORE, 247)
-
-
-if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestBlock)
-    unittest.TextTestRunner(verbosity=2).run(suite)
