@@ -3,12 +3,12 @@ from enum import IntEnum
 
 class Block:
     """
-        Minecraft PI block description. Can be sent to Minecraft.setBlock/s
-        block.type = the blockID of a block (It's material)
-        block.data = The variant of the type of block.
-        For example the colour of wool or the orientation of stairs
-        The default type for blocks is dirt
-        """
+    Minecraft PI block description. Can be sent to Minecraft.setBlock/s
+    block.type = the blockID of a block (It's material)
+    block.data = The variant of the type of block.
+    For example the colour of wool or the orientation of stairs
+    The default type for blocks is dirt
+    """
 
     def __init__(self, type=3, data=0):
         self.type = type
