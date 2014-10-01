@@ -1,14 +1,14 @@
 from enum import IntEnum
 
 
-# available 0-1 affects whether striking block sets off fuse
-class Tnt_type(IntEnum):
+class TNT_type(IntEnum):
+    """ available 0-1 affects whether striking block sets off fuse """
     SAFE = 0
     ARMED = 1
 
 
-# available range 0-15 affects colour of wool block
 class Color(IntEnum):
+    """  available range 0-15 affects colour of wool block """
     WHITE = 0
     ORANGE = 1
     MAGENTA = 2
@@ -29,10 +29,12 @@ class Color(IntEnum):
     BLACK = 15
 
 
-# only 0-2 seem to do anything for texture
-# 0 to 3 is type beyond that is decay counter
-# avilable range 0-15
 class Leaves_type(IntEnum):
+    """
+        only 0-2 seem to do anything for texture
+        0 to 3 is type beyond that is decay counter
+        available range 0-15
+    """
     OAK = 0
     PINE = 1
     SPRUCE = 1
@@ -40,9 +42,11 @@ class Leaves_type(IntEnum):
     JUNGLE = 3
 
 
-# only 0-2 seem to do anything
-# available values 0-15 affects texture and rotation
 class Wood_planks_type(IntEnum):
+    """
+        only 0-2 seem to do anything
+        available values 0-15 affects texture and rotation
+    """
     OAK_UP = 0
     SPRUCE_UP = 1
     BIRCH_UP = 2
@@ -61,9 +65,11 @@ class Wood_planks_type(IntEnum):
     JUNGLE_BARK = 15
 
 
-# available 0-15
-# 6,7,14 and 15 don't work (uses default stone)
 class Slab(IntEnum):
+    """
+        available 0-15
+        6,7,14 and 15 don't work (uses default stone)
+    """
     STONE = 0
     SANDSTONE = 1
     WOODEN = 2
@@ -86,11 +92,14 @@ class Slab(IntEnum):
     QUARTZ_TOP = 15
 
 
-# available 0-15
-# only 1 to 5 does anything
-# 6 and 7 wil use default stone
-# above that just cycles back round
 class Double_slab_type(IntEnum):
+
+    """
+        available 0-15
+        only 1 to 5 does anything
+        6 and 7 wil use default stone
+        above that just cycles back round
+    """
     STONE = 0
     SANDSTONE = 1
     WOODEN = 2
@@ -103,33 +112,37 @@ class Double_slab_type(IntEnum):
     QUARTZ = 7
 
 
-# available 0 to 2
 class Sandstone_type(IntEnum):
+    """  available 0 to 2 """
     SANDSTONE = 0
     CHISELED = 1
     SMOOTH = 2
 
 
-# available 0 to 3
 class Bed_type(IntEnum):
+    """  available 0 to 3 """
     SOUTH = 0
     WEST = 1
     NORTH = 2
     EAST = 3
 
 
-# available 0 to 3
-# no effect seemingly
 class Grass_type(IntEnum):
+    """
+        available 0 to 3
+        no effect seemingly
+    """
     SHRUB = 0
     GRASS = 1
     FERN = 2
     BIOME_SHRUB = 3
 
 
-# direction of ascending 0 to 7 available
-# 0 to 3 for normal stairs 4-7 for inverted stairs
 class Stairs_type(IntEnum):
+    """
+        direction of ascending 0 to 7 available
+        0 to 3 for normal stairs 4-7 for inverted stairs
+    """
     EAST = 0
     WEST = 1
     SOUTH = 2
@@ -141,6 +154,15 @@ class Stairs_type(IntEnum):
 
 
 class Door_type(IntEnum):
+    """
+        available 0-15
+        0-7 affect bottom half of door
+        0-3 unswung door pointing direction
+        4-7 swung door pointing direction
+        8-15 affect top half of door
+        8-11 unswung door pointing direction
+        12-15 swung door pointing direction
+    """
     NORTHWEST = 0
     NORTHEAST = 1
     SOUTHEAST = 2
