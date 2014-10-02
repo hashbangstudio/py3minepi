@@ -8,43 +8,43 @@ class TestBlock(unittest.TestCase):
     def test_representation(self):
         # Test repr
         b = Block(2, 8)
-        expectedString = "Block({:d}, {:d})".format(b.type, b.data)
+        expected_string = "Block({:d}, {:d})".format(b.type, b.data)
         rep = repr(b)
-        self.assertEqual(rep, expectedString)
+        self.assertEqual(rep, expected_string)
 
     def test_instantiation_and_with_data_function(self):
-        blck = Block(12)
-        self.assertEqual(blck.type, 12)
-        self.assertEqual(blck.data, 0)
-        blckWithData = Block(12, 4)
-        self.assertEqual(blckWithData.type, 12)
-        self.assertEqual(blckWithData.data, 4)
-        otherBlckWithData = blck.withData(8)
+        block = Block(12)
+        self.assertEqual(block.type, 12)
+        self.assertEqual(block.data, 0)
+        block_with_data = Block(12, 4)
+        self.assertEqual(block_with_data.type, 12)
+        self.assertEqual(block_with_data.data, 4)
+        otherBlckWithData = block.withData(8)
         self.assertEqual(otherBlckWithData.type, 12)
         self.assertEqual(otherBlckWithData.data, 8)
 
     def test_backwards_compatibility(self):
-        blck = Block(12)
-        self.assertEqual(blck.type, blck.id)
+        block = Block(12)
+        self.assertEqual(block.type, block.id)
 
     def test_equality(self):
         b1 = Block(8, 3)
-        bSame = Block(8, 3)
-        bDiffId = Block(12, 3)
-        bDiffData = Block(8, 7)
-        bDiffIdAndData = Block(51, 7)
+        b_same = Block(8, 3)
+        b_diff_id = Block(12, 3)
+        b_diff_data = Block(8, 7)
+        b_diff_id_and_data = Block(51, 7)
 
         self.assertTrue(b1 == b1)
-        self.assertTrue(b1 == bSame)
-        self.assertTrue(b1 != bDiffId)
-        self.assertTrue(b1 != bDiffData)
-        self.assertTrue(b1 != bDiffIdAndData)
+        self.assertTrue(b1 == b_same)
+        self.assertTrue(b1 != b_diff_id)
+        self.assertTrue(b1 != b_diff_data)
+        self.assertTrue(b1 != b_diff_id_and_data)
 
     def test_iteration(self):
-        idAndData = [35, 4]
-        b = Block(idAndData[0], idAndData[1])
+        id_and_data = [35, 4]
+        b = Block(id_and_data[0], id_and_data[1])
         for index, attr in enumerate(b):
-            self.assertEqual(attr, idAndData[index])
+            self.assertEqual(attr, id_and_data[index])
 
     def test_block_constants_aliases(self):
         self.assertEqual(BlockType.WATER,  BlockType.WATER_FLOWING)
