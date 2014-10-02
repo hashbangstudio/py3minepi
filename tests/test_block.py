@@ -15,12 +15,14 @@ class TestBlock():
         block = Block(12)
         assert block.type == 12
         assert block.data == 0
-        block_with_data = Block(12, 4)
-        assert block_with_data.type == 12
-        assert block_with_data.data == 4
-        otherBlckWithData = block.withData(8)
-        assert otherBlckWithData.type == 12
-        assert otherBlckWithData.data == 8
+
+        block_and_data = Block(12, 4)
+        assert block_and_data.type == 12
+        assert block_and_data.data == 4
+
+        other_block_with_data = block.withData(8)
+        assert other_block_with_data.type == 12
+        assert other_block_with_data.data == 8
 
     def test_backwards_compatibility(self):
         block = Block(12)
