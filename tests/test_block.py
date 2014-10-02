@@ -7,9 +7,11 @@ class TestBlock():
     def test_representation(self):
         # Test repr
         b = Block(2, 8)
-        expected_string = "Block({:d}, {:d})".format(b.type, b.data)
+        expected_string = "Block(2, 8)"
         rep = repr(b)
         assert rep == expected_string
+        blk = eval(repr(b))
+        assert blk == b
 
     def test_instantiation_and_with_data_function(self):
         block = Block(12)
