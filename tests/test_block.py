@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from minecraft.block import Block
 from minecraft.block import BlockType
 
@@ -124,3 +125,12 @@ class TestBlock():
         assert BlockType.FENCE_GATE == 107
         assert BlockType.GLOWING_OBSIDIAN == 246
         assert BlockType.NETHER_REACTOR_CORE == 247
+=======
+"""
+Bare-bones but we don't even import block in any tests yet
+"""
+
+from mcpi import block
+
+block.Block(block.AIR)
+>>>>>>> upstream/master

@@ -2,9 +2,9 @@ language: erlang
 env:
   - ARCH=arm TOXENV=py27
   - ARCH=arm TOXENV=py32
-  - ARCH=arm TOXENV=cov
-matrix:
-    allow_failures:
-        - env: ARCH=arm TOXENV=cov
+  - TOXENV=cov
+  - TOXENV=flake8
 script:
   - bash -ex .travis-ci.sh
+matrix:
+  fast_finish: true
