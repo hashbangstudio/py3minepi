@@ -8,7 +8,6 @@ class Block:
     For example grass, sand, dirt or wool
     block.data = The variant of the type of block.
     For example the colour of wool or the orientation of stairs
-    The default type for blocks is dirt
     """
     def __init__(self, type, data=0):
         self.type = type
